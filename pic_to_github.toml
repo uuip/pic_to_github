@@ -1,0 +1,11 @@
+token = "xxx"
+github_cdn = ""
+
+[repo]
+owner = "owner"
+repo = "repo name"
+path = "directory path inside repo"
+
+[committer]
+name = "name"
+email = "name@users.noreply.github.com"
