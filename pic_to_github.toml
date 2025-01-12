@@ -1,10 +1,11 @@
-token = "xxx"
-github_cdn = ""
+token = "xxx" # your github token which can write the following repo
+github_proxy = "" # example: https://hub.gitmirror.com/, end with "/".
+                  # Use this type of proxy for direct access, provided for Chinese users.
 
 [repo]
-owner = "owner"
-repo = "repo name"
-path = "directory path inside repo"
+owner = ""
+repo = "" # repo name
+path = "" # relative directory path inside repo
 
 [committer]
 name = "name"

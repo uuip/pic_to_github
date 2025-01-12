@@ -28,7 +28,7 @@ struct Committer {
 #[derive(Debug, Deserialize)]
 struct Config {
     token: String,
-    github_cdn: Option<String>,
+    github_proxy: Option<String>,
     repo: Repo,
     committer: Committer,
 }
@@ -41,7 +41,7 @@ fn main() -> anyhow::Result<()> {
 
     let client = build_client(&config.token)?;
     let repo_url = build_repo_url(&config.repo);
-    let github_cdn = config.github_cdn.unwrap_or_default();
+    let github_proxy = config.github_proxy.unwrap_or_default();
 
     let command_line_args: Vec<String> = env::args().skip(1).collect();
     if command_line_args.is_empty() {
@@ -69,7 +69,7 @@ fn main() -> anyhow::Result<()> {
         let download_url = rsp["content"]["download_url"]
             .as_str()
             .ok_or(anyhow!("commit failed: {url} {rsp}"))?;
-        println!("{github_cdn}{download_url}");
+        println!("{github_proxy}{download_url}");
     }
     Ok(())
 }
