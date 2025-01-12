@@ -39,7 +39,9 @@ jobs:
     steps:
       - name: Set Openssl
         if: runner.os == 'Linux'
-        run: apt install -y pkg-config libssl-dev
+        run: |
+          sudo apt update
+          sudo apt install -y pkg-config libssl-dev
       - uses: actions/checkout@v4
       - uses: taiki-e/upload-rust-binary-action@v1
         with:
