@@ -13,6 +13,9 @@ toml = "0.8.19"
 serde = { version = "1.0.217", features = ["derive"] }
 home = "0.5.11"
 
+[target.'cfg(target_os = "linux")'.dependencies]
+openssl-sys = { version = "0.9", features = ["vendored"] }
+
 [profile.release]
 lto = true
 strip = true
