@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.95"
 base64 = "0.22.1"
-reqwest = { version = "0.12.12", features = ["json", "gzip", "native-tls-alpn","blocking"] }
+reqwest = { version = "0.12.12", features = ["json", "gzip", "blocking"] }
 serde_json = "1.0.135"
 short-uuid = "0.1.4"
 toml = "0.8.19"
